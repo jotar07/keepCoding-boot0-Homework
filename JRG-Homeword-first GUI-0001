@@ -1,0 +1,41 @@
+from tkinter import *
+import tkinter as tk
+
+window = Tk()
+window.geometry ("500x500" )
+window.config(bg="blue")
+window.title ("Welcome to KeepCoding Demo App")
+
+import turtle as tu
+window = tk.Tk()
+window.title("keepCoding") #Title for the Window
+window.geometry('600x600') #Defining size of the Window
+#create canvas
+canvas = tk.Canvas(master = window, width = 500, height = 500) # We create a Canvas of 600x600 attached to window
+canvas.pack()
+
+tu = tu.RawTurtle(canvas) #Turtle inside the Canvas
+
+#guita() #tart the draw
+tu.pensize(25)
+tu.pencolor("blue")
+
+for i in range(4):
+    tu.forward(100)
+    tu.right(90)
+
+tu.begin_fill
+tu.fillcolor ("red")
+tu.pensize(25)
+tu.pencolor("red")
+for i in range(3):
+  tu.forward(100)
+  tu.left(120)
+
+#bottons
+tk.Button(master = window, text = "Hello", command = exit).pack(side = tk.BOTTOM) #Button attached to Window
+tk.Button(master = window, text = "Repeat Again", command = exit).pack(side = tk.BOTTOM) #Button attached to Window
+window.mainloop()
+
+
+
